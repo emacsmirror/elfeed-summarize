@@ -191,7 +191,7 @@ selected or visible.")
   (let ((pos (seq-position elfeed-search-entries entry)))
     (when pos
       (save-excursion
-        (elfeed-goto-line (+ pos elfeed-search--offset))
+        (elfeed-goto-line (1+ pos))
         (let ((ov (make-overlay (line-end-position) (1+ (line-end-position)))))
           (overlay-put ov 'elfeed-summarize-entry entry)
           (overlay-put ov 'after-string
