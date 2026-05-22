@@ -422,10 +422,10 @@ Depends on the state of the current show buffer's entry."
   "Buffer-local minor mode for elfeed show buffers."
   :keymap elfeed-summarize-show-mode-map
   (if elfeed-summarize-show-mode
-      (when (> (buffer-size) 0)
+      (when (and elfeed-show-entry (> (buffer-size) 0))
         (elfeed-show-refresh))
     (setq elfeed-summarize--show-summary-visible-p nil)
-    (when (> (buffer-size) 0)
+    (when (and elfeed-show-entry (> (buffer-size) 0))
       (elfeed-show-refresh))))
 
 ;;;###autoload
